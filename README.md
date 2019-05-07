@@ -3,7 +3,7 @@
 Moving Average implementation for `Go`.
 
 ## Simple moving average
-Simple moving average (`SMA`) is the unweighted `mean` of previous `n` data points.
+`Simple moving average` is the unweighted `mean` of previous `n` data points (`n` also referred as `window` size).
 
 ### Usage
 
@@ -19,7 +19,7 @@ func main() {
 	data.AddSample(5)
 	avg := data.Avg() // returns 3.0
 
-    data.AddSample(6) // It will overwrite firsh value (i.e. 1)
+    data.AddSample(6) // It will overwrite first value (i.e. 1)
 	avg := data.Avg() // returns 4.0
 }
 ```
