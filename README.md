@@ -2,7 +2,9 @@
 
 Moving Average implementation for `Go`.
 
-## Usage
+## Simple moving average
+
+### Usage
 
 ```
 import 	"github.com/rameshpolishetti/movingavg/sma"
@@ -21,13 +23,13 @@ func main() {
 }
 ```
 
-## Thread safe usage
+### Thread safe usage
 
 ```
     data, _ := sma.New(5)
-	tsdata := sma.TreadSafeSMA(data)
+    tsdata := sma.TreadSafeSMA(data)
     data.AddSample(5)
-	avg := data.Avg() // returns 5.0
+    avg := data.Avg() // returns 5.0
 ```
 
 ## Reference
