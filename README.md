@@ -3,6 +3,7 @@
 Moving Average implementation for `Go`.
 
 ## Simple moving average
+Simple moving average (`SMA`) is the unweighted `mean` of previous `n` data points.
 
 ### Usage
 
