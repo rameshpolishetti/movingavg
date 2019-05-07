@@ -35,4 +35,4 @@ func main() {
 
 ## Reference
 
-[https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average](https://en.wikipedia.org/wiki/Moving_average#Simple_moving_average)
+[https://en.wikipedia.org/wiki/Moving_average](https://en.wikipedia.org/wiki/Moving_average)
