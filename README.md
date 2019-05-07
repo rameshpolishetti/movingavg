@@ -33,6 +33,23 @@ func main() {
     avg := data.Avg() // returns 5.0
 ```
 
+## Cumulative moving average
+
+`Cumulative moving average` is sum of all data points divide by number of data points.
+
+### Usage
+
+```
+import 	"github.com/rameshpolishetti/movingavg/cma"
+
+func main() {
+	data := cma.New()
+	data.AddSample(1)
+	data.AddSample(2)
+	avg := data.Avg() // returns 1.5
+}
+```
+
 ## Reference
 
 [https://en.wikipedia.org/wiki/Moving_average](https://en.wikipedia.org/wiki/Moving_average)
