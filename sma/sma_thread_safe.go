@@ -8,8 +8,8 @@ type ThreadSafeSMA struct {
 	sma   *SMA
 }
 
-// TreadSafeSMA returns tread safe version of SMA
-func TreadSafeSMA(sma *SMA) *ThreadSafeSMA {
+// GetThreadSafeSMA returns tread safe version of SMA
+func GetThreadSafeSMA(sma *SMA) *ThreadSafeSMA {
 	return &ThreadSafeSMA{
 		sma: sma,
 	}

@@ -92,7 +92,7 @@ func TestAvgInt64(t *testing.T) {
 
 func TestTreadSafeSMA(t *testing.T) {
 	ma, _ := New(100)
-	sma := TreadSafeSMA(ma)
+	sma := GetThreadSafeSMA(ma)
 
 	// add 10 go routines
 	wg := sync.WaitGroup{}

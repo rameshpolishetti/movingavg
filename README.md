@@ -28,7 +28,7 @@ func main() {
 
 ```
     data, _ := sma.New(5)
-    tsdata := sma.TreadSafeSMA(data)
+    tsdata := sma.GeThreadSafeSMA(data)
     data.AddSample(5)
     avg := data.Avg() // returns 5.0
 ```
@@ -48,6 +48,15 @@ func main() {
 	data.AddSample(2)
 	avg := data.Avg() // returns 1.5
 }
+```
+
+### Thread safe usage
+
+```
+    data := cma.New()
+    tsdata := cma.GeThreadSafeCMA(data)
+    data.AddSample(5)
+    avg := data.Avg() // returns 5.0
 ```
 
 ## Reference
