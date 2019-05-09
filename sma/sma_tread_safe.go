@@ -23,6 +23,14 @@ func (tssma *ThreadSafeSMA) AddSample(s int) {
 	tssma.sma.AddSample(s)
 }
 
+// AddSampleInt64 adds a sample to SMA calculator
+func (tssma *ThreadSafeSMA) AddSampleInt64(s int64) {
+	tssma.mutex.Lock()
+	defer tssma.mutex.Unlock()
+
+	tssma.sma.AddSampleInt64(s)
+}
+
 // Avg calculates simple moving average and returns
 func (tssma *ThreadSafeSMA) Avg() float64 {
 	tssma.mutex.Lock()

@@ -36,6 +36,16 @@ func (sma *SMA) AddSample(s int) {
 	}
 }
 
+// AddSampleInt64 adds a sample (int64) to SMA calculator
+func (sma *SMA) AddSampleInt64(s int64) {
+	sma.samples[sma.index] = float64(s)
+	sma.index = (sma.index + 1) % sma.window
+
+	if !sma.windowFilled && sma.index == 0 {
+		sma.windowFilled = true
+	}
+}
+
 // Avg calculates simple moving average and returns
 func (sma *SMA) Avg() float64 {
 	if !sma.windowFilled && sma.index == 0 {

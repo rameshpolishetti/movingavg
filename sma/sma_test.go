@@ -56,6 +56,40 @@ func TestAvg(t *testing.T) {
 	}
 }
 
+func TestAvgInt64(t *testing.T) {
+	sma, _ := New(5)
+	avg := sma.Avg()
+	if avg != 0 {
+		t.Errorf("expected average=%v, got=%v", float64(0), avg)
+	}
+
+	sma.AddSampleInt64(1)
+	avg = sma.Avg() // avg = 1
+	if avg < 0.999 || avg > 1.001 {
+		t.Errorf("expected average=%v, got=%v", float64(1), avg)
+	}
+
+	sma.AddSampleInt64(3)
+	avg = sma.Avg() // avg = (1 + 3) / 2 =2
+	if avg < 1.999 || avg > 2.001 {
+		t.Errorf("expected average=%v, got=%v", float64(2), avg)
+	}
+
+	sma.AddSampleInt64(4)
+	sma.AddSampleInt64(2)
+	sma.AddSampleInt64(5)
+	avg = sma.Avg() // avg = (1+3+4+2+5) / 5 = 3
+	if avg < 2.999 || avg > 3.001 {
+		t.Errorf("expected average=%v, got=%v", float64(3), avg)
+	}
+
+	sma.AddSampleInt64(6)
+	avg = sma.Avg() // avg = (3+4+2+5+6) / 5 = 4
+	if avg < 3.999 || avg > 4.001 {
+		t.Errorf("expected average=%v, got=%v", float64(4), avg)
+	}
+}
+
 func TestTreadSafeSMA(t *testing.T) {
 	ma, _ := New(100)
 	sma := TreadSafeSMA(ma)
