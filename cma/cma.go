@@ -18,6 +18,13 @@ func (cma *CMA) AddSample(s int) float64 {
 	return cma.avg
 }
 
+// AddSampleInt64 adds a int64 sample to CMA calculator & returns latest average
+func (cma *CMA) AddSampleInt64(s int64) float64 {
+	cma.avg = cma.avg + (float64(s)-cma.avg)/float64(cma.n+1)
+	cma.n++
+	return cma.avg
+}
+
 // Avg returns cumulative moving average
 func (cma *CMA) Avg() float64 {
 	return cma.avg
